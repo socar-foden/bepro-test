@@ -9,7 +9,7 @@ describe("[App]", () => {
   });
 
   describe("[구성]", () => {
-    it("layout을 포함한다.", () => {
+    it("layout 영역을 포함한다.", () => {
       const layout = screen.getByRole("layout");
       expect(layout).toBeInTheDocument();
     });
