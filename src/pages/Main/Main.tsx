@@ -3,12 +3,13 @@ import React from "react";
 import Player from "../../components/Player/Player";
 import VideoList from "../../components/VideoList/VideoList";
 import { mockVideoList } from "../../constants";
+import { VideoModel } from "../../types/types";
 import S from "./Main.style";
 
 interface MainProps {}
 
 interface MainState {
-  videoList: string[];
+  videoList: VideoModel[];
   playingIndex: number;
 }
 
@@ -17,6 +18,8 @@ class Main extends React.Component<MainProps, MainState> {
     videoList: mockVideoList,
     playingIndex: 0,
   };
+
+  // handleOnClickVideo = (video) => {};
 
   render() {
     const { playingIndex } = this.state;

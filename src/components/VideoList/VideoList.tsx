@@ -1,20 +1,20 @@
 import React from "react";
 import { map } from "lodash-es";
 
-import S from "./Video.style";
+import S from "./VideoList.style";
+import Video from "../Video/Video";
+import { VideoModel } from "../../types/types";
 
 interface VideoListProps {
-  videoList: string[];
+  videoList: VideoModel[];
   playingIndex: number;
 }
 
 const VideoList: React.FC<VideoListProps> = ({ videoList = [] }) => {
   return (
     <S.Ul aria-label="video-list">
-      {map(videoList, (item, i) => (
-        <S.Li aria-label="video" key={i}>
-          {item}
-        </S.Li>
+      {map(videoList, (video) => (
+        <Video video={video} key={video.id} />
       ))}
     </S.Ul>
   );
